@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MeteoApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌤️ MeteoApp</h1>
+
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Entrer une ville...">
+      <button onclick="getWeather()">Rechercher</button>
+    </div>
+
+    <div id="weather"></div>
+
+    <h2>⭐ Favoris</h2>
+    <ul id="favorites"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
