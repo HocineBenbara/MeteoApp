@@ -1,0 +1,3 @@
+const API_CONFIG = {
+    OW_API_KEY: "54c9548ed428935fe5155edb202f8f08"
+};
