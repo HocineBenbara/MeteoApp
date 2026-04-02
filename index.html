@@ -111,34 +111,39 @@
             to { transform: rotate(360deg); }
         }
 
-        /* === BACKGROUNDS JOUR - BLEU CIEL === */
+        /* === BACKGROUNDS JOUR - BLEU CIEL (PLUS DE ROSE !) === */
         
+        /* Background Ensoleillé - Bleu/Jaune ciel lumineux */
         .weather-card.sunny {
             background: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #64b5f6 100%);
             border: 2px solid #42a5f5;
         }
 
+        /* Background Nuageux - Bleu ciel */
         .weather-card.cloudy {
             background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 50%, #81d4fa 100%);
             border: 2px solid #4fc3f7;
         }
 
+        /* Background Pluvieux - Bleu plus soutenu */
         .weather-card.rainy {
             background: linear-gradient(135deg, #bbdefb 0%, #90caf9 50%, #64b5f6 100%);
             border: 2px solid #42a5f5;
         }
 
+        /* Background Orageux - Bleu/Gris */
         .weather-card.stormy {
             background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 50%, #7986cb 100%);
             border: 2px solid #5c6bc0;
         }
 
+        /* Background Neige - Bleu très clair/Blanc */
         .weather-card.snowy {
             background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 50%, #bbdefb 100%);
             border: 2px solid #90caf9;
         }
 
-        /* === BACKGROUND NUIT - JAUNE/OR === */
+        /* === BACKGROUND NUIT - JAUNE/OR (PLUS DE MAUVE !) === */
         
         .weather-card.night {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -261,7 +266,7 @@
             color: #1976d2;
         }
 
-        /* === ÉLÉMENTS NUIT - JAUNE/OR === */
+        /* === ÉLÉMENTS NUIT - JAUNE/OR (PLUS DE MAUVE !) === */
 
         .weather-card.night .datetime-text,
         .weather-card.night .city-info h2,
@@ -280,20 +285,13 @@
             color: rgba(255,215,0,0.95);
         }
 
-        /* ✅ NUMÉRO DU JOUR EN BLANC LA NUIT */
-        .weather-card.night .f-day-number {
-            color: #ffffff;
-            -webkit-text-fill-color: #ffffff;
-            background: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
         .weather-card.night .f-temp {
             color: #ffd700;
             -webkit-text-fill-color: #ffd700;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
+        /* Stats grid nuit - JAUNE/OR */
         .weather-card.night .stats-grid {
             background: rgba(30, 41, 59, 0.95);
             border: 2px solid rgba(255,215,0,0.5);
