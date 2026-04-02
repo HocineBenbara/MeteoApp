@@ -8,7 +8,6 @@
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --card-bg: rgba(255, 255, 255, 0.95);
             --text-main: #2d3748;
             --text-light: #718096;
             --accent: #667eea;
@@ -79,7 +78,6 @@
 
         /* === BACKGROUND DES CARTES MÉTÉO === */
         .weather-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             border-radius: 20px;
             padding: 15px;
             box-shadow: var(--shadow);
@@ -103,7 +101,7 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
             pointer-events: none;
             animation: rotate 20s linear infinite;
         }
@@ -113,128 +111,210 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Background Ensoleillé - Plus coloré */
+        /* === BACKGROUNDS COLORÉS JOUR === */
+        
+        /* Background Ensoleillé - Orange/Rose vibrant */
         .weather-card.sunny {
-            background: linear-gradient(135deg, #fceabb 0%, #f8b500 50%, #ff9068 100%);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ff9a9e 100%);
             border: 2px solid #ff6b6b;
         }
 
-        /* Background Nuageux - Plus coloré */
+        /* Background Nuageux - Bleu/Violet vibrant */
         .weather-card.cloudy {
-            background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 50%, #6dd5ed 100%);
-            border: 2px solid #74b9ff;
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 50%, #a18cd1 100%);
+            border: 2px solid #a29bfe;
         }
 
-        /* Background Pluvieux - Plus coloré */
+        /* Background Pluvieux - Bleu/Cyan vibrant */
         .weather-card.rainy {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #4facfe 100%);
             border: 2px solid #0984e3;
         }
-        .weather-card.rainy .datetime-text,
-        .weather-card.rainy .city-info h2,
-        .weather-card.rainy .forecast-title,
-        .weather-card.rainy .f-day-name,
-        .weather-card.rainy .f-temp-min,
-        .weather-card.rainy .stat-label {
-            color: white;
-        }
-        .weather-card.rainy .f-day-card {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.4);
-        }
-        .weather-card.rainy .f-temp {
-            color: white;
-            -webkit-text-fill-color: white;
-        }
-        .weather-card.rainy .stats-grid {
-            background: rgba(255,255,255,0.25);
-        }
-        .weather-card.rainy .card-search input {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
-            color: white;
-        }
-        .weather-card.rainy .card-search input::placeholder {
-            color: rgba(255,255,255,0.8);
-        }
-        .weather-card.rainy .card-search button {
-            color: white;
-        }
 
-        /* Background Orageux - Plus coloré */
+        /* Background Orageux - Violet/Rouge/Orange vibrant */
         .weather-card.stormy {
-            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             border: 2px solid #fd79a8;
         }
-        .weather-card.stormy .datetime-text,
-        .weather-card.stormy .city-info h2,
-        .weather-card.stormy .forecast-title,
-        .weather-card.stormy .f-day-name,
-        .weather-card.stormy .f-temp-min,
-        .weather-card.stormy .stat-label {
-            color: white;
-        }
-        .weather-card.stormy .f-day-card {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.3);
-        }
-        .weather-card.stormy .f-temp {
-            color: #ffeaa7;
-            -webkit-text-fill-color: #ffeaa7;
-        }
-        .weather-card.stormy .stats-grid {
-            background: rgba(255,255,255,0.2);
-        }
-        .weather-card.stormy .card-search input {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
-            color: white;
-        }
-        .weather-card.stormy .card-search input::placeholder {
-            color: rgba(255,255,255,0.8);
-        }
-        .weather-card.stormy .card-search button {
-            color: white;
-        }
 
-        /* Background Neige - Plus coloré */
+        /* Background Neige - Rose/Turquoise vibrant */
         .weather-card.snowy {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 50%, #e0c3fc 100%);
             border: 2px solid #81ecec;
         }
 
-        /* Background Nuit - Plus coloré */
+        /* === BACKGROUNDS NUIT === */
+        
+        /* Background Nuit - Violet profond avec meilleur contraste */
         .weather-card.night {
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             border: 2px solid #a29bfe;
         }
+
+        /* === TEXTES ET ÉLÉMENTS COMMUNS === */
+        
+        .weather-card.sunny .city-info h2,
+        .weather-card.cloudy .city-info h2,
+        .weather-card.rainy .city-info h2,
+        .weather-card.stormy .city-info h2,
+        .weather-card.snowy .city-info h2 {
+            color: #2d3748;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .weather-card.sunny .datetime-text,
+        .weather-card.cloudy .datetime-text,
+        .weather-card.rainy .datetime-text,
+        .weather-card.stormy .datetime-text,
+        .weather-card.snowy .datetime-text {
+            color: #4a5568;
+            border-bottom-color: rgba(0,0,0,0.15);
+        }
+
+        .weather-card.sunny .forecast-title,
+        .weather-card.cloudy .forecast-title,
+        .weather-card.rainy .forecast-title,
+        .weather-card.stormy .forecast-title,
+        .weather-card.snowy .forecast-title {
+            color: #2d3748;
+        }
+
+        .weather-card.sunny .f-day-card,
+        .weather-card.cloudy .f-day-card,
+        .weather-card.rainy .f-day-card,
+        .weather-card.stormy .f-day-card,
+        .weather-card.snowy .f-day-card {
+            background: rgba(255,255,255,0.6);
+            border-color: rgba(255,255,255,0.8);
+        }
+
+        .weather-card.sunny .f-day-name,
+        .weather-card.cloudy .f-day-name,
+        .weather-card.rainy .f-day-name,
+        .weather-card.stormy .f-day-name,
+        .weather-card.snowy .f-day-name {
+            color: #4a5568;
+        }
+
+        .weather-card.sunny .f-temp,
+        .weather-card.cloudy .f-temp,
+        .weather-card.rainy .f-temp,
+        .weather-card.stormy .f-temp,
+        .weather-card.snowy .f-temp {
+            color: #2d3748;
+            -webkit-text-fill-color: #2d3748;
+        }
+
+        .weather-card.sunny .f-temp-min,
+        .weather-card.cloudy .f-temp-min,
+        .weather-card.rainy .f-temp-min,
+        .weather-card.stormy .f-temp-min,
+        .weather-card.snowy .f-temp-min {
+            color: #718096;
+        }
+
+        .weather-card.sunny .stats-grid,
+        .weather-card.cloudy .stats-grid,
+        .weather-card.rainy .stats-grid,
+        .weather-card.stormy .stats-grid,
+        .weather-card.snowy .stats-grid {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .weather-card.sunny .stat-val,
+        .weather-card.cloudy .stat-val,
+        .weather-card.rainy .stat-val,
+        .weather-card.stormy .stat-val,
+        .weather-card.snowy .stat-val {
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        .weather-card.sunny .stat-label,
+        .weather-card.cloudy .stat-label,
+        .weather-card.rainy .stat-label,
+        .weather-card.stormy .stat-label,
+        .weather-card.snowy .stat-label {
+            color: #4a5568;
+        }
+
+        .weather-card.sunny .card-search input,
+        .weather-card.cloudy .card-search input,
+        .weather-card.rainy .card-search input,
+        .weather-card.stormy .card-search input,
+        .weather-card.snowy .card-search input {
+            background: rgba(255,255,255,0.7);
+            border-color: rgba(255,255,255,0.9);
+            color: #2d3748;
+        }
+
+        .weather-card.sunny .card-search input::placeholder,
+        .weather-card.cloudy .card-search input::placeholder,
+        .weather-card.rainy .card-search input::placeholder,
+        .weather-card.stormy .card-search input::placeholder,
+        .weather-card.snowy .card-search input::placeholder {
+            color: #718096;
+        }
+
+        .weather-card.sunny .card-search button,
+        .weather-card.cloudy .card-search button,
+        .weather-card.rainy .card-search button,
+        .weather-card.stormy .card-search button,
+        .weather-card.snowy .card-search button {
+            color: #667eea;
+        }
+
+        /* === ÉLÉMENTS NUIT === */
+
         .weather-card.night .datetime-text,
         .weather-card.night .city-info h2,
-        .weather-card.night .forecast-title,
-        .weather-card.night .f-day-name,
-        .weather-card.night .f-temp-min,
-        .weather-card.night .stat-label {
+        .weather-card.night .forecast-title {
             color: white;
         }
+
         .weather-card.night .f-day-card {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.25);
-        }
-        .weather-card.night .f-temp {
-            color: #ffeaa7;
-            -webkit-text-fill-color: #ffeaa7;
-        }
-        .weather-card.night .stats-grid {
-            background: rgba(255,255,255,0.15);
-        }
-        .weather-card.night .card-search input {
             background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .weather-card.night .f-day-name,
+        .weather-card.night .f-temp-min {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .weather-card.night .f-temp {
+            color: #ffd93d;
+            -webkit-text-fill-color: #ffd93d;
+        }
+
+        /* Stats grid nuit - MEILLEUR CONTRASTE */
+        .weather-card.night .stats-grid {
+            background: rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .weather-card.night .stat-val {
+            color: #ffd93d;
+            font-weight: 700;
+            font-size: 1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .weather-card.night .stat-label {
+            color: rgba(255,255,255,0.95);
+            font-weight: 500;
+        }
+
+        .weather-card.night .card-search input {
+            background: rgba(255,255,255,0.25);
             border-color: rgba(255,255,255,0.4);
             color: white;
         }
+
         .weather-card.night .card-search input::placeholder {
             color: rgba(255,255,255,0.7);
         }
+
         .weather-card.night .card-search button {
             color: #a29bfe;
         }
@@ -256,13 +336,9 @@
             outline: none;
             font-size: 0.9rem;
             transition: 0.3s;
-            background: rgba(255,255,255,0.8);
         }
 
-        .card-search input:focus { 
-            border-color: var(--accent);
-            background: white;
-        }
+        .card-search input:focus { border-color: var(--accent); }
 
         .card-search button {
             position: absolute;
@@ -314,8 +390,8 @@
             flex-grow: 1;
         }
 
-        .temp-big { font-size: 2.5rem; font-weight: bold; color: var(--accent); line-height: 1; }
-        .desc-big { font-size: 1rem; color: var(--text-light); text-transform: capitalize; margin: 8px 0; }
+        .temp-big { font-size: 2.5rem; font-weight: bold; color: white; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .desc-big { font-size: 1rem; color: white; text-transform: capitalize; margin: 8px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
         
         .weather-icon {
             height: 130px;
@@ -347,17 +423,17 @@
         }
         .stat-box { text-align: center; }
         .stat-val { font-weight: bold; font-size: 0.9rem; }
-        .stat-label { font-size: 0.65rem; color: #888; }
+        .stat-label { font-size: 0.65rem; }
 
         .fav-btn-card {
             background: none;
             border: none;
             font-size: 1.2rem;
-            color: #ddd;
+            color: rgba(255,255,255,0.7);
             cursor: pointer;
             transition: 0.3s;
         }
-        .fav-btn-card.active { color: #fbbf24; transform: scale(1.2); }
+        .fav-btn-card.active { color: #ffd93d; transform: scale(1.2); }
 
         .forecast-area {
             margin-top: 15px;
