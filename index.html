@@ -76,7 +76,6 @@
             max-width: 820px;
         }
 
-        /* === BACKGROUND DES CARTES MÉTÉO === */
         .weather-card {
             border-radius: 20px;
             padding: 15px;
@@ -93,7 +92,6 @@
             border: 2px solid rgba(255,255,255,0.5);
         }
 
-        /* Motif décoratif en arrière-plan */
         .weather-card::before {
             content: '';
             position: absolute;
@@ -101,7 +99,7 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
             pointer-events: none;
             animation: rotate 20s linear infinite;
         }
@@ -111,55 +109,49 @@
             to { transform: rotate(360deg); }
         }
 
-        /* === BACKGROUNDS COLORÉS JOUR === */
+        /* === BACKGROUNDS JOUR - BLEU CIEL === */
         
-        /* Background Ensoleillé - Orange/Rose vibrant */
         .weather-card.sunny {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ff9a9e 100%);
-            border: 2px solid #ff6b6b;
+            background: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #64b5f6 100%);
+            border: 2px solid #42a5f5;
         }
 
-        /* Background Nuageux - Bleu/Violet vibrant */
         .weather-card.cloudy {
-            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 50%, #a18cd1 100%);
-            border: 2px solid #a29bfe;
+            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 50%, #81d4fa 100%);
+            border: 2px solid #4fc3f7;
         }
 
-        /* Background Pluvieux - Bleu/Cyan vibrant */
         .weather-card.rainy {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #4facfe 100%);
-            border: 2px solid #0984e3;
+            background: linear-gradient(135deg, #bbdefb 0%, #90caf9 50%, #64b5f6 100%);
+            border: 2px solid #42a5f5;
         }
 
-        /* Background Orageux - Violet/Rouge/Orange vibrant */
         .weather-card.stormy {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            border: 2px solid #fd79a8;
+            background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 50%, #7986cb 100%);
+            border: 2px solid #5c6bc0;
         }
 
-        /* Background Neige - Rose/Turquoise vibrant */
         .weather-card.snowy {
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 50%, #e0c3fc 100%);
-            border: 2px solid #81ecec;
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 50%, #bbdefb 100%);
+            border: 2px solid #90caf9;
         }
 
-        /* === BACKGROUNDS NUIT === */
+        /* === BACKGROUND NUIT === */
         
-        /* Background Nuit - Violet profond avec meilleur contraste */
         .weather-card.night {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            border: 2px solid #a29bfe;
+            border: 2px solid #4a5568;
         }
 
-        /* === TEXTES ET ÉLÉMENTS COMMUNS === */
+        /* === TEXTES JOUR === */
         
         .weather-card.sunny .city-info h2,
         .weather-card.cloudy .city-info h2,
         .weather-card.rainy .city-info h2,
         .weather-card.stormy .city-info h2,
         .weather-card.snowy .city-info h2 {
-            color: #2d3748;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+            color: #0d47a1;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
         }
 
         .weather-card.sunny .datetime-text,
@@ -167,8 +159,8 @@
         .weather-card.rainy .datetime-text,
         .weather-card.stormy .datetime-text,
         .weather-card.snowy .datetime-text {
-            color: #4a5568;
-            border-bottom-color: rgba(0,0,0,0.15);
+            color: #1565c0;
+            border-bottom-color: rgba(0,0,0,0.1);
         }
 
         .weather-card.sunny .forecast-title,
@@ -176,7 +168,7 @@
         .weather-card.rainy .forecast-title,
         .weather-card.stormy .forecast-title,
         .weather-card.snowy .forecast-title {
-            color: #2d3748;
+            color: #0d47a1;
         }
 
         .weather-card.sunny .f-day-card,
@@ -184,8 +176,8 @@
         .weather-card.rainy .f-day-card,
         .weather-card.stormy .f-day-card,
         .weather-card.snowy .f-day-card {
-            background: rgba(255,255,255,0.6);
-            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.8);
+            border-color: rgba(255,255,255,0.95);
         }
 
         .weather-card.sunny .f-day-name,
@@ -193,7 +185,7 @@
         .weather-card.rainy .f-day-name,
         .weather-card.stormy .f-day-name,
         .weather-card.snowy .f-day-name {
-            color: #4a5568;
+            color: #1565c0;
         }
 
         .weather-card.sunny .f-temp,
@@ -201,8 +193,8 @@
         .weather-card.rainy .f-temp,
         .weather-card.stormy .f-temp,
         .weather-card.snowy .f-temp {
-            color: #2d3748;
-            -webkit-text-fill-color: #2d3748;
+            color: #0d47a1;
+            -webkit-text-fill-color: #0d47a1;
         }
 
         .weather-card.sunny .f-temp-min,
@@ -210,7 +202,7 @@
         .weather-card.rainy .f-temp-min,
         .weather-card.stormy .f-temp-min,
         .weather-card.snowy .f-temp-min {
-            color: #718096;
+            color: #1976d2;
         }
 
         .weather-card.sunny .stats-grid,
@@ -218,7 +210,8 @@
         .weather-card.rainy .stats-grid,
         .weather-card.stormy .stats-grid,
         .weather-card.snowy .stats-grid {
-            background: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.9);
         }
 
         .weather-card.sunny .stat-val,
@@ -226,8 +219,9 @@
         .weather-card.rainy .stat-val,
         .weather-card.stormy .stat-val,
         .weather-card.snowy .stat-val {
-            color: #2d3748;
-            font-weight: 700;
+            color: #0d47a1;
+            font-weight: 800;
+            font-size: 1rem;
         }
 
         .weather-card.sunny .stat-label,
@@ -235,7 +229,8 @@
         .weather-card.rainy .stat-label,
         .weather-card.stormy .stat-label,
         .weather-card.snowy .stat-label {
-            color: #4a5568;
+            color: #1565c0;
+            font-weight: 600;
         }
 
         .weather-card.sunny .card-search input,
@@ -243,9 +238,9 @@
         .weather-card.rainy .card-search input,
         .weather-card.stormy .card-search input,
         .weather-card.snowy .card-search input {
-            background: rgba(255,255,255,0.7);
-            border-color: rgba(255,255,255,0.9);
-            color: #2d3748;
+            background: rgba(255,255,255,0.9);
+            border-color: rgba(255,255,255,1);
+            color: #0d47a1;
         }
 
         .weather-card.sunny .card-search input::placeholder,
@@ -253,7 +248,7 @@
         .weather-card.rainy .card-search input::placeholder,
         .weather-card.stormy .card-search input::placeholder,
         .weather-card.snowy .card-search input::placeholder {
-            color: #718096;
+            color: #1976d2;
         }
 
         .weather-card.sunny .card-search button,
@@ -261,62 +256,75 @@
         .weather-card.rainy .card-search button,
         .weather-card.stormy .card-search button,
         .weather-card.snowy .card-search button {
-            color: #667eea;
+            color: #1976d2;
         }
 
-        /* === ÉLÉMENTS NUIT === */
+        /* === ÉLÉMENTS NUIT - SEULEMENT NUMÉROS JAUNES === */
 
         .weather-card.night .datetime-text,
         .weather-card.night .city-info h2,
         .weather-card.night .forecast-title {
-            color: white;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .weather-card.night .f-day-card {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             border-color: rgba(255,255,255,0.3);
         }
 
         .weather-card.night .f-day-name,
         .weather-card.night .f-temp-min {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ✅ SEULEMENT LES NUMÉROS DES JOURS EN JAUNE */
+        .weather-card.night .f-day-number {
+            color: #ffd700;
+            -webkit-text-fill-color: #ffd700;
+            background: #ffd700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .weather-card.night .f-temp {
-            color: #ffd93d;
-            -webkit-text-fill-color: #ffd93d;
+            color: #ffffff;
+            -webkit-text-fill-color: #ffffff;
         }
 
-        /* Stats grid nuit - MEILLEUR CONTRASTE */
         .weather-card.night .stats-grid {
-            background: rgba(255,255,255,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(30, 41, 59, 0.95);
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .weather-card.night .stat-val {
-            color: #ffd93d;
-            font-weight: 700;
-            font-size: 1rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 0.5px;
         }
 
         .weather-card.night .stat-label {
-            color: rgba(255,255,255,0.95);
-            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .weather-card.night .card-search input {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.4);
-            color: white;
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+            color: #ffffff;
         }
 
         .weather-card.night .card-search input::placeholder {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.6);
         }
 
         .weather-card.night .card-search button {
-            color: #a29bfe;
+            color: #ffffff;
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -390,8 +398,8 @@
             flex-grow: 1;
         }
 
-        .temp-big { font-size: 2.5rem; font-weight: bold; color: white; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .desc-big { font-size: 1rem; color: white; text-transform: capitalize; margin: 8px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .temp-big { font-size: 2.5rem; font-weight: bold; color: white; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .desc-big { font-size: 1rem; color: white; text-transform: capitalize; margin: 8px 0; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
         
         .weather-icon {
             height: 130px;
@@ -433,7 +441,7 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        .fav-btn-card.active { color: #ffd93d; transform: scale(1.2); }
+        .fav-btn-card.active { color: #ffd700; transform: scale(1.2); }
 
         .forecast-area {
             margin-top: 15px;
@@ -652,7 +660,7 @@
 
             <div class="card-header">
                 <div class="city-info">
-                    <h2 id="city-1">Paris</h2>
+                    <h2 id="city-1">Montréal</h2>
                 </div>
                 <button class="fav-btn-card" id="fav-btn-1" onclick="toggleFavorite(1)"><i class="fas fa-star"></i></button>
             </div>
@@ -694,7 +702,7 @@
 
             <div class="card-header">
                 <div class="city-info">
-                    <h2 id="city-2">Lyon</h2>
+                    <h2 id="city-2">Constantine</h2>
                 </div>
                 <button class="fav-btn-card" id="fav-btn-2" onclick="toggleFavorite(2)"><i class="fas fa-star"></i></button>
             </div>
@@ -743,12 +751,12 @@
         
         const state = {
             slots: [
-                { id: 1, city: "Paris", timezone: 0, active: true },
-                { id: 2, city: "Marseille", timezone: 0, active: false }
+                { id: 1, city: "Montréal", timezone: 0, active: true },
+                { id: 2, city: "Constantine", timezone: 0, active: false }
             ],
             forecastDays: 7,
             showFavs: false,
-            favorites: JSON.parse(localStorage.getItem('weatherFavs')) || []
+            favorites: JSON.parse(localStorage.getItem('weatherFavs')) || ['Montréal', 'Constantine']
         };
 
         window.onload = () => {
