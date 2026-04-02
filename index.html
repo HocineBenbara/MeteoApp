@@ -77,6 +77,7 @@
             max-width: 820px;
         }
 
+        /* === BACKGROUND DES CARTES MÉTÉO === */
         .weather-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -88,6 +89,114 @@
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        /* Background Ensoleillé */
+        .weather-card.sunny {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 50%, #ffeaa7 100%);
+            border: 2px solid #ffd93d;
+        }
+
+        /* Background Nuageux */
+        .weather-card.cloudy {
+            background: linear-gradient(135deg, #e8e8e8 0%, #ffffff 50%, #d1d1d1 100%);
+            border: 2px solid #b8b8b8;
+        }
+
+        /* Background Pluvieux */
+        .weather-card.rainy {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4a5568 100%);
+            border: 2px solid #5a67d8;
+        }
+        .weather-card.rainy .datetime-text,
+        .weather-card.rainy .city-info h2,
+        .weather-card.rainy .forecast-title {
+            color: white;
+        }
+        .weather-card.rainy .f-day-card {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .weather-card.rainy .f-day-name,
+        .weather-card.rainy .f-temp-min {
+            color: rgba(255,255,255,0.9);
+        }
+        .weather-card.rainy .f-temp {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+        .weather-card.rainy .stats-grid {
+            background: rgba(255,255,255,0.2);
+        }
+        .weather-card.rainy .stat-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Background Orageux */
+        .weather-card.stormy {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #1a202c 100%);
+            border: 2px solid #718096;
+        }
+        .weather-card.stormy .datetime-text,
+        .weather-card.stormy .city-info h2,
+        .weather-card.stormy .forecast-title {
+            color: white;
+        }
+        .weather-card.stormy .f-day-card {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .weather-card.stormy .f-day-name,
+        .weather-card.stormy .f-temp-min {
+            color: rgba(255,255,255,0.9);
+        }
+        .weather-card.stormy .f-temp {
+            color: #ffd93d;
+            -webkit-text-fill-color: #ffd93d;
+        }
+        .weather-card.stormy .stats-grid {
+            background: rgba(255,255,255,0.15);
+        }
+        .weather-card.stormy .stat-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Background Neige */
+        .weather-card.snowy {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 50%, #bbdefb 100%);
+            border: 2px solid #90caf9;
+        }
+
+        /* Background Nuit */
+        .weather-card.night {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border: 2px solid #533483;
+        }
+        .weather-card.night .datetime-text,
+        .weather-card.night .city-info h2,
+        .weather-card.night .forecast-title {
+            color: white;
+        }
+        .weather-card.night .f-day-card {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .weather-card.night .f-day-name,
+        .weather-card.night .f-temp-min {
+            color: rgba(255,255,255,0.8);
+        }
+        .weather-card.night .f-temp {
+            color: #ffd93d;
+            -webkit-text-fill-color: #ffd93d;
+        }
+        .weather-card.night .stats-grid {
+            background: rgba(255,255,255,0.1);
+        }
+        .weather-card.night .stat-label {
+            color: rgba(255,255,255,0.7);
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -96,7 +205,7 @@
             position: relative;
             margin-bottom: 12px;
             padding-bottom: 12px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
         }
 
         .card-search input {
@@ -149,7 +258,7 @@
             font-size: 0.8rem;
             margin: 5px 0 12px 0;
             padding-bottom: 12px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
         }
 
         .datetime-date { display: block; margin-bottom: 2px; }
@@ -208,7 +317,7 @@
 
         .forecast-area {
             margin-top: 15px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(0,0,0,0.1);
             padding-top: 12px;
         }
         .forecast-header {
@@ -484,7 +593,6 @@
     <script src="config.js"></script>
 
     <script>
-        // Récupération de la clé depuis config.js
         const OW_API_KEY = API_CONFIG.OW_API_KEY;
         
         const state = {
@@ -644,6 +752,31 @@
             const iconCode = data.weather[0].icon;
             const iconElement = document.getElementById(`icon-${id}`);
             iconElement.src = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+            
+            // Appliquer le background selon la météo
+            const cardElement = document.getElementById(`card-${id}`);
+            cardElement.className = 'weather-card';
+            
+            // Déterminer le type de météo
+            const weatherMain = data.weather[0].main.toLowerCase();
+            const weatherId = data.weather[0].id;
+            const isNight = iconCode.includes('n');
+            
+            if (isNight) {
+                cardElement.classList.add('night');
+            } else if (weatherMain.includes('clear') || weatherMain.includes('sun')) {
+                cardElement.classList.add('sunny');
+            } else if (weatherMain.includes('cloud')) {
+                cardElement.classList.add('cloudy');
+            } else if (weatherMain.includes('rain') || weatherMain.includes('drizzle')) {
+                cardElement.classList.add('rainy');
+            } else if (weatherMain.includes('thunder') || weatherId >= 200 && weatherId < 300) {
+                cardElement.classList.add('stormy');
+            } else if (weatherMain.includes('snow') || weatherId >= 600 && weatherId < 700) {
+                cardElement.classList.add('snowy');
+            } else {
+                cardElement.classList.add('cloudy');
+            }
             
             iconElement.className = 'weather-icon';
             if (iconCode.includes('01d') || iconCode.includes('02d')) {
