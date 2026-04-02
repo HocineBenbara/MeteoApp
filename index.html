@@ -109,31 +109,36 @@
             to { transform: rotate(360deg); }
         }
 
-        /* === BACKGROUNDS JOUR - BLEU CIEL === */
+        /* === BACKGROUNDS JOUR - ÉLÉGANTS === */
         
+        /* Ensoleillé - Or/Blanc élégant */
         .weather-card.sunny {
-            background: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #64b5f6 100%);
-            border: 2px solid #42a5f5;
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 50%, #fff3cd 100%);
+            border: 2px solid #ffd54f;
         }
 
+        /* Nuageux - Gris perle élégant */
         .weather-card.cloudy {
-            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 50%, #81d4fa 100%);
-            border: 2px solid #4fc3f7;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 50%, #e8ecf1 100%);
+            border: 2px solid #b0bec5;
         }
 
+        /* Pluvieux - Bleu gris élégant */
         .weather-card.rainy {
-            background: linear-gradient(135deg, #bbdefb 0%, #90caf9 50%, #64b5f6 100%);
-            border: 2px solid #42a5f5;
-        }
-
-        .weather-card.stormy {
-            background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 50%, #7986cb 100%);
-            border: 2px solid #5c6bc0;
-        }
-
-        .weather-card.snowy {
-            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 50%, #bbdefb 100%);
+            background: linear-gradient(135deg, #e8f4f8 0%, #b3d9e8 50%, #d4e9f2 100%);
             border: 2px solid #90caf9;
+        }
+
+        /* Orageux - Violet gris élégant */
+        .weather-card.stormy {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 50%, #e1bee7 100%);
+            border: 2px solid #b39ddb;
+        }
+
+        /* Neige - Blanc bleuté élégant */
+        .weather-card.snowy {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 50%, #e6f3ff 100%);
+            border: 2px solid #bbdefb;
         }
 
         /* === BACKGROUND NUIT === */
@@ -150,7 +155,7 @@
         .weather-card.rainy .city-info h2,
         .weather-card.stormy .city-info h2,
         .weather-card.snowy .city-info h2 {
-            color: #0d47a1;
+            color: #37474f;
             text-shadow: 0 1px 2px rgba(255,255,255,0.8);
         }
 
@@ -159,7 +164,7 @@
         .weather-card.rainy .datetime-text,
         .weather-card.stormy .datetime-text,
         .weather-card.snowy .datetime-text {
-            color: #1565c0;
+            color: #546e7a;
             border-bottom-color: rgba(0,0,0,0.1);
         }
 
@@ -168,7 +173,7 @@
         .weather-card.rainy .forecast-title,
         .weather-card.stormy .forecast-title,
         .weather-card.snowy .forecast-title {
-            color: #0d47a1;
+            color: #37474f;
         }
 
         .weather-card.sunny .f-day-card,
@@ -176,7 +181,7 @@
         .weather-card.rainy .f-day-card,
         .weather-card.stormy .f-day-card,
         .weather-card.snowy .f-day-card {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.9);
             border-color: rgba(255,255,255,0.95);
         }
 
@@ -185,7 +190,7 @@
         .weather-card.rainy .f-day-name,
         .weather-card.stormy .f-day-name,
         .weather-card.snowy .f-day-name {
-            color: #1565c0;
+            color: #546e7a;
         }
 
         .weather-card.sunny .f-temp,
@@ -193,8 +198,8 @@
         .weather-card.rainy .f-temp,
         .weather-card.stormy .f-temp,
         .weather-card.snowy .f-temp {
-            color: #0d47a1;
-            -webkit-text-fill-color: #0d47a1;
+            color: #37474f;
+            -webkit-text-fill-color: #37474f;
         }
 
         .weather-card.sunny .f-temp-min,
@@ -202,7 +207,7 @@
         .weather-card.rainy .f-temp-min,
         .weather-card.stormy .f-temp-min,
         .weather-card.snowy .f-temp-min {
-            color: #1976d2;
+            color: #78909c;
         }
 
         .weather-card.sunny .stats-grid,
@@ -210,7 +215,7 @@
         .weather-card.rainy .stats-grid,
         .weather-card.stormy .stats-grid,
         .weather-card.snowy .stats-grid {
-            background: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.8);
             border: 1px solid rgba(255,255,255,0.9);
         }
 
@@ -219,7 +224,7 @@
         .weather-card.rainy .stat-val,
         .weather-card.stormy .stat-val,
         .weather-card.snowy .stat-val {
-            color: #0d47a1;
+            color: #37474f;
             font-weight: 800;
             font-size: 1rem;
         }
@@ -229,7 +234,7 @@
         .weather-card.rainy .stat-label,
         .weather-card.stormy .stat-label,
         .weather-card.snowy .stat-label {
-            color: #1565c0;
+            color: #546e7a;
             font-weight: 600;
         }
 
@@ -238,9 +243,9 @@
         .weather-card.rainy .card-search input,
         .weather-card.stormy .card-search input,
         .weather-card.snowy .card-search input {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             border-color: rgba(255,255,255,1);
-            color: #0d47a1;
+            color: #37474f;
         }
 
         .weather-card.sunny .card-search input::placeholder,
@@ -248,7 +253,7 @@
         .weather-card.rainy .card-search input::placeholder,
         .weather-card.stormy .card-search input::placeholder,
         .weather-card.snowy .card-search input::placeholder {
-            color: #1976d2;
+            color: #78909c;
         }
 
         .weather-card.sunny .card-search button,
@@ -256,10 +261,10 @@
         .weather-card.rainy .card-search button,
         .weather-card.stormy .card-search button,
         .weather-card.snowy .card-search button {
-            color: #1976d2;
+            color: #546e7a;
         }
 
-        /* === ÉLÉMENTS NUIT - SEULEMENT NUMÉROS JAUNES === */
+        /* === ÉLÉMENTS NUIT === */
 
         .weather-card.night .datetime-text,
         .weather-card.night .city-info h2,
@@ -278,11 +283,11 @@
             color: rgba(255,255,255,0.8);
         }
 
-        /* ✅ SEULEMENT LES NUMÉROS DES JOURS EN JAUNE */
+        /* ✅ NUMÉRO DU JOUR JAUNE SANS BACKGROUND */
         .weather-card.night .f-day-number {
             color: #ffd700;
             -webkit-text-fill-color: #ffd700;
-            background: #ffd700;
+            background: transparent;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
