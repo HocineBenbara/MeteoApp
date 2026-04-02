@@ -280,11 +280,11 @@
             color: rgba(255,215,0,0.95);
         }
 
-        /* ✅ NUMÉRO DU JOUR EN BLANC LA NUIT */
+        /* ✅ NUMÉRO DU JOUR EN JAUNE LA NUIT */
         .weather-card.night .f-day-number {
-            color: #ffffff;
-            -webkit-text-fill-color: #ffffff;
-            background: #ffffff;
+            color: #ffd700;
+            -webkit-text-fill-color: #ffd700;
+            background: #ffd700;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
@@ -665,7 +665,7 @@
 
             <div class="card-header">
                 <div class="city-info">
-                    <h2 id="city-1">Paris</h2>
+                    <h2 id="city-1">Montréal</h2>
                 </div>
                 <button class="fav-btn-card" id="fav-btn-1" onclick="toggleFavorite(1)"><i class="fas fa-star"></i></button>
             </div>
@@ -707,7 +707,7 @@
 
             <div class="card-header">
                 <div class="city-info">
-                    <h2 id="city-2">Lyon</h2>
+                    <h2 id="city-2">Constantine</h2>
                 </div>
                 <button class="fav-btn-card" id="fav-btn-2" onclick="toggleFavorite(2)"><i class="fas fa-star"></i></button>
             </div>
@@ -756,12 +756,13 @@
         
         const state = {
             slots: [
-                { id: 1, city: "Paris", timezone: 0, active: true },
-                { id: 2, city: "Marseille", timezone: 0, active: false }
+                { id: 1, city: "Montréal", timezone: 0, active: true },
+                { id: 2, city: "Constantine", timezone: 0, active: false }
             ],
             forecastDays: 7,
             showFavs: false,
-            favorites: JSON.parse(localStorage.getItem('weatherFavs')) || []
+            // ✅ FAVORIS PAR DÉFAUT : Montréal et Constantine
+            favorites: JSON.parse(localStorage.getItem('weatherFavs')) || ['Montréal', 'Constantine']
         };
 
         window.onload = () => {
