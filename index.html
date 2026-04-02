@@ -111,43 +111,38 @@
             to { transform: rotate(360deg); }
         }
 
-        /* === BACKGROUNDS JOUR - PLUS CLAIRS ET LUMINEUX === */
+        /* === BACKGROUNDS JOUR - BLEU CIEL === */
         
-        /* Background Ensoleillé - Jaune/Orange clair lumineux */
         .weather-card.sunny {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);
-            border: 2px solid #ffb74d;
+            background: linear-gradient(135deg, #e3f2fd 0%, #90caf9 50%, #64b5f6 100%);
+            border: 2px solid #42a5f5;
         }
 
-        /* Background Nuageux - Bleu ciel clair */
         .weather-card.cloudy {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
-            border: 2px solid #64b5f6;
-        }
-
-        /* Background Pluvieux - Bleu clair lumineux */
-        .weather-card.rainy {
             background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 50%, #81d4fa 100%);
             border: 2px solid #4fc3f7;
         }
 
-        /* Background Orageux - Violet clair */
-        .weather-card.stormy {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #ce93d8 100%);
-            border: 2px solid #ba68c8;
+        .weather-card.rainy {
+            background: linear-gradient(135deg, #bbdefb 0%, #90caf9 50%, #64b5f6 100%);
+            border: 2px solid #42a5f5;
         }
 
-        /* Background Neige - Blanc/Bleu très clair */
+        .weather-card.stormy {
+            background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 50%, #7986cb 100%);
+            border: 2px solid #5c6bc0;
+        }
+
         .weather-card.snowy {
             background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 50%, #bbdefb 100%);
             border: 2px solid #90caf9;
         }
 
-        /* === BACKGROUND NUIT - SOMBRE AVEC CONTRASTE MAX === */
+        /* === BACKGROUND NUIT - JAUNE/OR === */
         
         .weather-card.night {
-            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
-            border: 2px solid #778da9;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border: 2px solid #ffd700;
         }
 
         /* === TEXTES ET ÉLÉMENTS JOUR === */
@@ -157,7 +152,7 @@
         .weather-card.rainy .city-info h2,
         .weather-card.stormy .city-info h2,
         .weather-card.snowy .city-info h2 {
-            color: #1a202c;
+            color: #0d47a1;
             text-shadow: 0 1px 2px rgba(255,255,255,0.8);
         }
 
@@ -166,7 +161,7 @@
         .weather-card.rainy .datetime-text,
         .weather-card.stormy .datetime-text,
         .weather-card.snowy .datetime-text {
-            color: #2d3748;
+            color: #1565c0;
             border-bottom-color: rgba(0,0,0,0.1);
         }
 
@@ -175,7 +170,7 @@
         .weather-card.rainy .forecast-title,
         .weather-card.stormy .forecast-title,
         .weather-card.snowy .forecast-title {
-            color: #1a202c;
+            color: #0d47a1;
         }
 
         .weather-card.sunny .f-day-card,
@@ -192,7 +187,7 @@
         .weather-card.rainy .f-day-name,
         .weather-card.stormy .f-day-name,
         .weather-card.snowy .f-day-name {
-            color: #4a5568;
+            color: #1565c0;
         }
 
         .weather-card.sunny .f-temp,
@@ -200,8 +195,8 @@
         .weather-card.rainy .f-temp,
         .weather-card.stormy .f-temp,
         .weather-card.snowy .f-temp {
-            color: #1a202c;
-            -webkit-text-fill-color: #1a202c;
+            color: #0d47a1;
+            -webkit-text-fill-color: #0d47a1;
         }
 
         .weather-card.sunny .f-temp-min,
@@ -209,7 +204,7 @@
         .weather-card.rainy .f-temp-min,
         .weather-card.stormy .f-temp-min,
         .weather-card.snowy .f-temp-min {
-            color: #718096;
+            color: #1976d2;
         }
 
         .weather-card.sunny .stats-grid,
@@ -226,7 +221,7 @@
         .weather-card.rainy .stat-val,
         .weather-card.stormy .stat-val,
         .weather-card.snowy .stat-val {
-            color: #1a202c;
+            color: #0d47a1;
             font-weight: 800;
             font-size: 1rem;
         }
@@ -236,7 +231,7 @@
         .weather-card.rainy .stat-label,
         .weather-card.stormy .stat-label,
         .weather-card.snowy .stat-label {
-            color: #4a5568;
+            color: #1565c0;
             font-weight: 600;
         }
 
@@ -247,7 +242,7 @@
         .weather-card.snowy .card-search input {
             background: rgba(255,255,255,0.9);
             border-color: rgba(255,255,255,1);
-            color: #1a202c;
+            color: #0d47a1;
         }
 
         .weather-card.sunny .card-search input::placeholder,
@@ -255,7 +250,7 @@
         .weather-card.rainy .card-search input::placeholder,
         .weather-card.stormy .card-search input::placeholder,
         .weather-card.snowy .card-search input::placeholder {
-            color: #718096;
+            color: #1976d2;
         }
 
         .weather-card.sunny .card-search button,
@@ -263,26 +258,34 @@
         .weather-card.rainy .card-search button,
         .weather-card.stormy .card-search button,
         .weather-card.snowy .card-search button {
-            color: #667eea;
+            color: #1976d2;
         }
 
-        /* === ÉLÉMENTS NUIT - CONTRASTE MAXIMUM === */
+        /* === ÉLÉMENTS NUIT - JAUNE/OR === */
 
         .weather-card.night .datetime-text,
         .weather-card.night .city-info h2,
         .weather-card.night .forecast-title {
-            color: white;
+            color: #ffd700;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .weather-card.night .f-day-card {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,215,0,0.15);
+            border-color: rgba(255,215,0,0.4);
         }
 
         .weather-card.night .f-day-name,
         .weather-card.night .f-temp-min {
-            color: rgba(255,255,255,0.95);
+            color: rgba(255,215,0,0.95);
+        }
+
+        /* ✅ NUMÉRO DU JOUR EN BLANC LA NUIT */
+        .weather-card.night .f-day-number {
+            color: #ffffff;
+            -webkit-text-fill-color: #ffffff;
+            background: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .weather-card.night .f-temp {
@@ -291,10 +294,9 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Stats grid nuit - CONTRASTE MAXIMUM */
         .weather-card.night .stats-grid {
-            background: rgba(30, 41, 59, 0.9);
-            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(30, 41, 59, 0.95);
+            border: 2px solid rgba(255,215,0,0.5);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
@@ -307,22 +309,23 @@
         }
 
         .weather-card.night .stat-label {
-            color: rgba(255,255,255,1);
+            color: #ffd700;
             font-weight: 700;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            opacity: 0.9;
         }
 
         .weather-card.night .card-search input {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.4);
-            color: white;
+            background: rgba(255,215,0,0.15);
+            border-color: rgba(255,215,0,0.4);
+            color: #ffd700;
         }
 
         .weather-card.night .card-search input::placeholder {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,215,0,0.7);
         }
 
         .weather-card.night .card-search button {
